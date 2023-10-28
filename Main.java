@@ -1,4 +1,3 @@
-
 //// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 //// then press Enter. You can now see whitespace characters in your code.
 //public class Main {
@@ -22,26 +21,22 @@
 //}
 
 /*types
-* byte
-* short
-* int
-* long
-*
-* letters
-* char
-* string
-*
-* Decimal numbers
-* float
-* double
-* */
+ * byte
+ * short
+ * int
+ * long
+ *
+ * letters
+ * char
+ * string
+ *
+ * Decimal numbers
+ * float
+ * double
+ * */
 
-import java.awt.*;
-import java.text.NumberFormat;
 import java.time.Year;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Scanner;
 
 //public class Main {
@@ -50,7 +45,7 @@ import java.util.Scanner;
 //        age = 60;
 //        byte herAge = 16;
 //        byte myAge = herAge + 5;
-        /*for a large numbers*/
+/*for a large numbers*/
 //        long viewsCount = 3_123_456_789L;
 //        float price = 20.88F;
 //        /*single letter - single quote == char and double more letters double quotes == string */
@@ -135,50 +130,131 @@ byte > short > int > long*/
 //}
 
 /* AHH GREET YOU BOSS TERMINAL JAVA APP */
+//public class Main {
+//    public static void main(String[] args) {
+//        /*scanner represent inputs just know */
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("Ahh Greet You Boss \uD83D\uDE4C");
+//
+//        System.out.print("which way nah ? ");
+//        String way = scanner.nextLine();
+//
+//
+//        System.out.print("oohhkk na " + way + "?, oyah nah ID your yourself ASAP:...");
+//        String userName = scanner.nextLine().toUpperCase();
+//
+//
+//        System.out.println("Ahh Greet you Boss " + userName + " tap that guy wey dey wear eye-glass say my guy pablo dey greet am ooo \uD83D\uDE4C");
+//
+//        System.out.println("Occupation: ");
+//        System.out.print("i dey ");
+//        String occupation = scanner.nextLine();
+//
+//
+//        int startYear = scanner.nextInt();
+//        int testing = startYear;
+//
+//        while (true) {
+//            System.out.print("Ahh Chairman " + userName + " so which year you start to dey " + occupation + "? ");
+//            if (scanner.hasNextInt()) {
+//                testing = scanner.nextInt();
+//                break; // Exit the loop if valid input is provided
+//            } else {
+//                System.out.println("Invalid input. Please enter a valid year.");
+//                scanner.nextLine(); // Consume the invalid input
+//            }
+//        }
+//
+//        System.out.println("You entered a valid year: " + startYear);
+//
+//        // You can use the 'startYear' variable for further processing.
+//    }
+//
+//
+//    /* current time sha */
+//    Date now = new Date();
+//    long timeStamp = now.getTime();
+//
+//    /* get current year from here */
+//    int currentYear = Year.now().getValue();
+//
+//
+//    int results = currentYear - startYear;
+//
+//        if(startYear< 2023){
+//        System.out.println("omo you get " + results + " years of experience for the work ooo");
+//    } else{
+//        System.out.println("omo you get " + results + " year of experience for the work ooo");
+//    }
+//
+//
+//    /* omo print all the printables abeg */
+//        System.out.println("no wahala, later we go talk more base on some kind individs and babyFemales \uD83E\uDD1D ");
+//        System.out.println("Current Time: "+ timeStamp);
+//        System.out.println("#FirstJavaApp");
+//
+//    /*testing commit on intellij idea*/
+//
+//
+//}
+//}
+
+
+/*CORRECTED CODES*/
 public class Main {
     public static void main(String[] args) {
-        /*scanner represent inputs just know */
-        Scanner scanner =  new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hello, boss! \uD83D\uDE4C");
 
-        System.out.println("Ahh Greet You Boss \uD83D\uDE4C");
-
-        System.out.print("which way nah ? ");
+        System.out.print("Which way now? ");
         String way = scanner.nextLine();
 
-
-        System.out.print("oohhkk na " + way + "?, oyah nah ID your yourself ASAP:...");
+        System.out.print("Alright, you're " + way + ", please provide your ID: ");
         String userName = scanner.nextLine().toUpperCase();
 
-
-        System.out.println("Ahh Greet you Boss "  + userName + " tap that guy wey dey wear eye-glass say my guy pablo dey greet am ooo \uD83D\uDE4C");
-
-        System.out.println("Occupation: ");
-        System.out.print("i dey ");
+        System.out.println("Hello, boss " + userName + "! Please tell me your occupation: ");
         String occupation = scanner.nextLine();
 
+        int startYear;
 
-        System.out.print("Ahh Chairman " + userName + " so which year you start to dey " + occupation + "? ");
-        int startYear =  scanner.nextInt();
+        while (true) {
+            System.out.print("Chairman " + userName + ", in which year did you start your " + occupation + "? ");
+            if (scanner.hasNextInt()) {
+                startYear = scanner.nextInt();
+                break;
+            } else {
+                System.out.println("Invalid input. Please enter a valid year.");
+                scanner.nextLine();
+            }
+        }
+
+        // Get the current date and time
+        Date now = new Date();
+        now.getTime();
+
+        // Get the current year
+        int currentYear = Year.now().getValue();
+
+        int experienceYears = currentYear - startYear;
+
+//        if (experienceYears > 1) {
+//            System.out.printf("You have %d years of experience in %s%n", experienceYears, occupation);
+//        } else if (experienceYears == 1) {
+//            System.out.printf("You have %d year of experience in %s%n ", experienceYears, occupation);
+//        } else {
+//            System.out.printf("You have no recorded experience in %s yet.", occupation);
+//        }
+
+//        System.out.printf("You have %d year%s of experience in %s%n", experienceYears, experienceYears == 1 ? "" : "s", occupation);
+//        System.out.printf(experienceYears <= 0 ? "You have no recorded experience in %s yet.%n" : "You have %d year%s of experience in %s%n",
+//                experienceYears, experienceYears == 1 ? "" : "s", occupation);
+        System.out.printf(experienceYears <= 0 ? "You have no recorded experience in " + occupation + " yet.%n" : "You have %d year%s of experience in %s%n",
+                experienceYears, experienceYears == 1 ? "" : "s", occupation);
 
 
-
-        /* current time sha */
-       Date now = new Date();
-       now.getTime();
-
-       /* get current year from here */
-        int currentYear  = Year.now().getValue();
-
-        int results = currentYear - startYear;
-
-        /* omo print all the printables abeg */
-        System.out.println("omo you get " + results + " year(s) of experience for the work ooo");
-        System.out.println("no wahala, later we go talk more base on some kind individs and babyFemales \uD83E\uDD1D ");
+        System.out.println("No problem, we'll chat more later. \uD83E\uDD1D");
         System.out.println("Current Time: " + now);
         System.out.println("#FirstJavaApp");
-
-        /*testing commit on intellij ide*/
     }
 }
-
-
